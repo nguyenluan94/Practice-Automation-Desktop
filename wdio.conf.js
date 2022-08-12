@@ -1,4 +1,4 @@
-const binaryPath = process.env.BINARY || 'C:/Users/Nguyen Luan/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/HalomeSB.lnk';
+const binaryPath = process.env.BINARY || 'C:\\Users\\Nguyen Luan\\AppData\\Local\\Programs\\msgr-client-electron\\HalomeSB.exe';
 
 exports.config = {
     specs: ['./test/specs/**/*.ts'],
@@ -9,7 +9,7 @@ exports.config = {
             maxInstances: 5,
             browserName: 'chrome',
             'goog:chromeOptions': {
-                // binary: binaryPath,
+                binary: binaryPath,
                 args: [],
             },
             acceptInsecureCerts: true,
