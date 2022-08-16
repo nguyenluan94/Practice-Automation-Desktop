@@ -30,7 +30,7 @@ describe('TEST ANONYMOUS LOGIN FLOWS', async () => {
         await Anonymous.enterVerification(INVALID_NUMBER.falseOtp);
     });
 
-    it('should process to verification step', async () => {
+    it('should show login verify error', async () => {
         await expect(Anonymous.loginVerifyError).toBeExisting();
     });
     it('should input otp sms success', async () => {

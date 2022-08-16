@@ -2,13 +2,12 @@ import { INVALID_NUMBER } from '../../data/login-anonymous/data';
 import { VALID_NUMBER } from '../../data/login-anonymous/data';
 import Anonymous from '../../pageobjects/login/anonymous';
 
-
 describe('TEST ANONYMOUS LOGIN FLOWS', async () => {
-    it('should disable login button', async () => {
+    it('should disable login button ', async () => {
         await expect(Anonymous.btnStartLogin).toBeDisabled();
     });
 
-    it('should disable login button after enter letter', async () => {
+    it('should disable login button after enter letter ', async () => {
         await Anonymous.enterPhoneNumber(INVALID_NUMBER.letter);
         await expect(Anonymous.btnStartLogin).toBeDisabled();
     });
@@ -33,7 +32,7 @@ describe('TEST ANONYMOUS LOGIN FLOWS', async () => {
     it('should title modal stop verify', async () => {
         await expect(Anonymous.modalVerify).toBeExisting();
     });
-    it('should close modal stop verify', async () => {
+    it('should click close modal stop verify', async () => {
         await Anonymous.clickModalCancel();
     });
     it('should show modal stop the verification process', async () => {
@@ -50,7 +49,7 @@ describe('TEST ANONYMOUS LOGIN FLOWS', async () => {
         await expect(Anonymous.btnStartLogin).toBeDisabled();
     });
 
-    it('should enable login button after enter phone number', async () => {
+    it('should enable login button after enter phone number ', async () => {
         await Anonymous.enterPhoneNumber(VALID_NUMBER.phone);
         await expect(Anonymous.btnStartLogin).not.toBeDisabled();
     });
