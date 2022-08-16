@@ -43,8 +43,17 @@ class Anonymous extends Page {
     get btnModalCancel() {
         return $('button[id="modal-button-cancel"]');
     }
+    get showLogoHalome() {
+        return $('#appbar-logo');
+    }
+    get btnContinue() {
+        return $('button[id="register-continue-button"]');
+    }
+    get inputName() {
+        return $('input');
+    }
 
-    async enterPhoneNumber(phone: string) {
+    async enterPhoneNumber(phone: number | string) {
         return this.inputPhoneNumber.setValue(phone);
     }
 
@@ -64,15 +73,21 @@ class Anonymous extends Page {
         return this.btnVerifyBack.click();
     }
 
-    async showModalOk() {
+    async clickModalOk() {
         return this.btnModalOk.click();
     }
 
-    async showModalCancel() {
+    async clickModalCancel() {
         return this.btnModalCancel.click();
     }
     async clickBtnClose() {
         return this.btnClose.click();
+    }
+    async clickBtnContinue() {
+        return this.btnContinue.click();
+    }
+    async enterInputName(name: string) {
+        return this.inputName.setValue(name);
     }
 }
 
