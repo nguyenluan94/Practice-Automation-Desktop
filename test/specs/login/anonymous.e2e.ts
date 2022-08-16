@@ -1,24 +1,23 @@
 import Anonymous from '../../pageobjects/login/anonymous';
+// import { VALID_PHONE_NUMBER } from "../../data/login-anonymous/data";
 
-const VALID_PHONE_NUMBER = '0977585797';
-const UNVALID_CHAR_PHONE_NUMBER = 'abcdef';
-const UNVALID_SPECHAR_PHONE_NUMBER = '@#$%&';
-const FALSE_VERIFI_CODE = '175206';
-const VERIFI_CODE = '000000';
+const VALID_PHONE_NUMBER = '0822016873';
+const INVALID_CHAR_PHONE_NUMBER = 'abcdef';
+const INVALID_SPECHAR_PHONE_NUMBER = '@#$%&';
+const FALSE_VERIFY_CODE = '175206';
+const VERIFY_CODE = '000000';
 
 describe('TEST ANONYMOUS LOGIN FLOWS', async () => {
-    //Kiểm tra button Đăng nhập có disable hay không
     it('should disable login button', async () => {
         await expect(Anonymous.btnStartLogin).toBeDisabled();
     });
 
-    it('should cant input', async () => {
-        await Anonymous.enterPhoneNumber(UNVALID_CHAR_PHONE_NUMBER);
-        // await expect(Anonymous.btnStartLogin).not.toBeDisabled();
+    it('should disable login button after enter letter', async () => {
+        await Anonymous.enterPhoneNumber(INVALID_CHAR_PHONE_NUMBER);
         await expect(Anonymous.btnStartLogin).toBeDisabled();
     });
-    it('should cant input', async () => {
-        await Anonymous.enterPhoneNumber(UNVALID_SPECHAR_PHONE_NUMBER);
+    it('should disable login button after enter special character', async () => {
+        await Anonymous.enterPhoneNumber(INVALID_SPECHAR_PHONE_NUMBER);
         await expect(Anonymous.btnStartLogin).toBeDisabled();
     });
 
@@ -57,11 +56,11 @@ describe('TEST ANONYMOUS LOGIN FLOWS', async () => {
     });
 
     it('should cant input', async () => {
-        await Anonymous.enterPhoneNumber(UNVALID_CHAR_PHONE_NUMBER);
+        await Anonymous.enterPhoneNumber(INVALID_CHAR_PHONE_NUMBER);
         await expect(Anonymous.btnStartLogin).toBeDisabled();
     });
     it('should cant input', async () => {
-        await Anonymous.enterPhoneNumber(UNVALID_SPECHAR_PHONE_NUMBER);
+        await Anonymous.enterPhoneNumber(INVALID_SPECHAR_PHONE_NUMBER);
         await expect(Anonymous.btnStartLogin).toBeDisabled();
     });
 
@@ -104,11 +103,11 @@ describe('TEST ANONYMOUS LOGIN FLOWS', async () => {
     });
 
     it('should cant input', async () => {
-        await Anonymous.enterPhoneNumber(UNVALID_CHAR_PHONE_NUMBER);
+        await Anonymous.enterPhoneNumber(INVALID_CHAR_PHONE_NUMBER);
         await expect(Anonymous.btnStartLogin).toBeDisabled();
     });
     it('should cant input', async () => {
-        await Anonymous.enterPhoneNumber(UNVALID_SPECHAR_PHONE_NUMBER);
+        await Anonymous.enterPhoneNumber(INVALID_SPECHAR_PHONE_NUMBER);
         await expect(Anonymous.btnStartLogin).toBeDisabled();
     });
 
@@ -127,7 +126,7 @@ describe('TEST ANONYMOUS LOGIN FLOWS', async () => {
     });
 
     it('should input otp sms ', async () => {
-        await Anonymous.enterVerification(FALSE_VERIFI_CODE);
+        await Anonymous.enterVerification(FALSE_VERIFY_CODE);
     });
 
     it('should process to verification step', async () => {
@@ -135,6 +134,6 @@ describe('TEST ANONYMOUS LOGIN FLOWS', async () => {
     });
 
     it('should input otp sms ', async () => {
-        await Anonymous.enterVerification(VERIFI_CODE);
+        await Anonymous.enterVerification(VERIFY_CODE);
     });
 });

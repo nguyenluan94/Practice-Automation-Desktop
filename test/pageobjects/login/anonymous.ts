@@ -32,7 +32,7 @@ class Anonymous extends Page {
     get btnVerifyBack() {
         return $('#login-verify-go-back');
     }
-    get btnCloseX() {
+    get btnClose() {
         return $('#modal-icon-close');
     }
 
@@ -71,8 +71,8 @@ class Anonymous extends Page {
     async showModalCancel() {
         return this.btnModalCancel.click();
     }
-    async clickX() {
-        return this.btnCloseX.click();
+    async clickBtnClose() {
+        return this.btnClose.click();
     }
 }
 
