@@ -1,8 +1,7 @@
 const binaryPath = process.env.BINARY || 'C:\\Users\\Nguyen Luan\\AppData\\Local\\Programs\\msgr-client-electron\\HalomeSB.exe';
 
 exports.config = {
-    // specs: ['./test/specs/**/*.ts'],
-    specs: ['./test/specs/**/anonymous-firsttime.e2e.ts'],
+    specs: ['./test/specs/**/*.ts'],
     exclude: [],
     maxInstances: 10,
     capabilities: [
