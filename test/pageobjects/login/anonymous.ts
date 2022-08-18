@@ -18,7 +18,7 @@ class Anonymous extends Page {
     }
 
     get inputVerification() {
-        return $('input[data-testid="otp-input-0"]');
+        return $('input[id="phone-verify-form-input-1"]');
     }
 
     get loginVerifyError() {
@@ -33,7 +33,7 @@ class Anonymous extends Page {
         return $('#login-verify-go-back');
     }
     get btnClose() {
-        return $('#modal-icon-close');
+        return $('[id="modal-icon-close"]');
     }
 
     get btnModalOk() {
@@ -51,6 +51,24 @@ class Anonymous extends Page {
     }
     get inputName() {
         return $('input');
+    }
+    get appbarProfile() {
+        return $('#appbar-profile');
+    }
+    get avatarProfile() {
+        return $('#profile-content-button-avatar');
+    }
+    get pageWelcome() {
+        return $('#welcome-title');
+    }
+    get btnLogout() {
+        return $('#profile-content-button-logout');
+    }
+    async clickLogout() {
+        return this.btnLogout.click();
+    }
+    async clickAbProfile() {
+        return this.appbarProfile.click();
     }
 
     async enterPhoneNumber(phone: number | string) {

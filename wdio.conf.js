@@ -2,6 +2,8 @@ const binaryPath = process.env.BINARY || 'C:\\Users\\Nguyen Luan\\AppData\\Local
 
 exports.config = {
     specs: ['./test/specs/**/*.ts'],
+    // specs: ['./test/specs/**/anonymous.e2e.ts'],
+    // specs: ['./test/specs/**/anonymous-firsttime.e2e.ts'],
     exclude: [],
     maxInstances: 10,
     capabilities: [

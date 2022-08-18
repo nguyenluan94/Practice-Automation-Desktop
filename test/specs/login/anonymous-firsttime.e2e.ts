@@ -1,5 +1,5 @@
-import { INVALID_NUMBER } from '../../data/login-anonymous/data';
-import { VALID_NUMBER } from '../../data/login-anonymous/data';
+import { INVALID_NUMBER } from '../../data/login-anonymous/data.e2e';
+import { VALID_NUMBER } from '../../data/login-anonymous/data.e2e';
 import Anonymous from '../../pageobjects/login/anonymous';
 
 describe('TEST ANONYMOUS LOGIN FLOWS', async () => {
@@ -42,5 +42,22 @@ describe('TEST ANONYMOUS LOGIN FLOWS', async () => {
     it('should login success after click button continue', async () => {
         await Anonymous.clickBtnContinue();
         await expect(Anonymous.showLogoHalome).toBeExisting();
+    });
+    //Logout
+    it('should click avatar in left sidebar and show profile ', async () => {
+        await Anonymous.clickAbProfile();
+        await expect(Anonymous.avatarProfile).toBeExisting();
+    });
+    it('should show modal logout and back profile after click cancel', async () => {
+        await Anonymous.clickLogout();
+        await expect(Anonymous.modalVerify).toBeExisting();
+        await Anonymous.clickModalCancel();
+        await expect(Anonymous.avatarProfile).toBeExisting();
+    });
+    it('should start logout and back page welcome', async () => {
+        await Anonymous.clickLogout();
+        await expect(Anonymous.modalVerify).toBeExisting();
+        await Anonymous.clickModalOk();
+        await expect(Anonymous.pageWelcome).toBeExisting();
     });
 });
