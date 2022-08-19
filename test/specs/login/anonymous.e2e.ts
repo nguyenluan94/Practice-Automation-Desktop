@@ -1,4 +1,4 @@
-import { INVALID_NUMBER, VALID_NUMBER } from '../../data/login-anonymous/data.e2e';
+import { INVALID_NUMBER, VALID_NUMBER } from '../../data/login/anonymous';
 import Anonymous from '../../pageobjects/login/anonymous';
 
 describe('TEST ANONYMOUS LOGIN FLOWS', async () => {
@@ -25,8 +25,18 @@ describe('TEST ANONYMOUS LOGIN FLOWS', async () => {
         await expect(Anonymous.titleLoginVerify).toBeExisting();
     });
     it('should show modal stop the verification process', async () => {
-        await Anonymous.showModal();
-        await expect(Anonymous.btnVerifyBack).toBeExisting();
+        await Anonymous.clickBtnBack();
+        await expect(Anonymous.btnBack).toBeExisting();
+    });
+    it('should title modal stop verify', async () => {
+        await expect(Anonymous.modalVerify).toBeExisting();
+    });
+    it('should click close modal stop verify', async () => {
+        await Anonymous.clickBtnClose();
+    });
+    it('should show modal stop the verification process', async () => {
+        await Anonymous.clickBtnBack();
+        await expect(Anonymous.btnBack).toBeExisting();
     });
     it('should title modal stop verify', async () => {
         await expect(Anonymous.modalVerify).toBeExisting();
@@ -34,9 +44,9 @@ describe('TEST ANONYMOUS LOGIN FLOWS', async () => {
     it('should click close modal stop verify', async () => {
         await Anonymous.clickModalCancel();
     });
-    it('should show modal stop the verification process', async () => {
-        await Anonymous.showModal();
-        await expect(Anonymous.btnVerifyBack).toBeExisting();
+    it('should show modal back after click button back', async () => {
+        await Anonymous.clickBtnBack();
+        await expect(Anonymous.btnBack).toBeExisting();
     });
     it('should title modal stop verify', async () => {
         await expect(Anonymous.modalVerify).toBeExisting();
@@ -63,7 +73,7 @@ describe('TEST ANONYMOUS LOGIN FLOWS', async () => {
     });
 
     it('should input otp sms false', async () => {
-        await Anonymous.enterVerification(INVALID_NUMBER.falseOtp);
+        await Anonymous.enterVerification(INVALID_NUMBER.otp);
     });
 
     it('should process to verification step', async () => {
@@ -73,22 +83,5 @@ describe('TEST ANONYMOUS LOGIN FLOWS', async () => {
     it('should input otp sms success', async () => {
         await Anonymous.enterVerification(VALID_NUMBER.otp);
         await expect(Anonymous.showLogoHalome).toBeExisting();
-    });
-    //Logout
-    it('should click avatar in left sidebar and show profile ', async () => {
-        await Anonymous.clickAbProfile();
-        await expect(Anonymous.avatarProfile).toBeExisting();
-    });
-    it('should show modal logout and back profile after click cancel', async () => {
-        await Anonymous.clickLogout();
-        await expect(Anonymous.modalVerify).toBeExisting();
-        await Anonymous.clickModalCancel();
-        await expect(Anonymous.avatarProfile).toBeExisting();
-    });
-    it('should start logout and back page welcome', async () => {
-        await Anonymous.clickLogout();
-        await expect(Anonymous.modalVerify).toBeExisting();
-        await Anonymous.clickModalOk();
-        await expect(Anonymous.pageWelcome).toBeExisting();
     });
 });

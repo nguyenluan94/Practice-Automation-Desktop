@@ -20,17 +20,8 @@ class Anonymous extends Page {
     get inputVerification() {
         return $('input[id="phone-verify-form-input-1"]');
     }
-
-    get loginVerifyError() {
-        return $('#login-verify-error');
-    }
-
     get modalVerify() {
         return $('#modal-body-content');
-    }
-
-    get btnBack() {
-        return $('#login-verify-go-back');
     }
     get btnClose() {
         return $('#modal-icon-close');
@@ -45,12 +36,6 @@ class Anonymous extends Page {
     }
     get showLogoHalome() {
         return $('#appbar-logo');
-    }
-    get btnContinue() {
-        return $('button[id="register-continue-button"]');
-    }
-    get inputName() {
-        return $('input');
     }
     get appbarProfile() {
         return $('#appbar-profile');
@@ -86,11 +71,6 @@ class Anonymous extends Page {
     async enterVerification(code: string) {
         return this.inputVerification.setValue(code);
     }
-
-    async clickBtnBack() {
-        return this.btnBack.click();
-    }
-
     async clickModalOk() {
         return this.btnModalOk.click();
     }
@@ -100,12 +80,6 @@ class Anonymous extends Page {
     }
     async clickBtnClose() {
         return this.btnClose.click();
-    }
-    async clickBtnContinue() {
-        return this.btnContinue.click();
-    }
-    async enterInputName(name: string) {
-        return this.inputName.setValue(name);
     }
 }
 
