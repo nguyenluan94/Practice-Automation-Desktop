@@ -1,4 +1,4 @@
-import Page from '../page';
+import Page from '../../page';
 
 class Hahalolo extends Page {
     get btnLoginHalo() {
@@ -34,8 +34,21 @@ class Hahalolo extends Page {
     get logoutAccount() {
         return $('#halo-login-form-button-logout');
     }
+    get otp() {
+        return $('#otp-form-need-input-1');
+    }
+    get logoHalome() {
+        return $('#appbar-logo');
+    }
+    get errorOtp() {
+        return $('#otp-form-need-error');
+    }
+    async inputOtp(otp: string) {
+        return this.otp.setValue(otp);
+    }
 
     async clickBtnCont() {
+        await this.btnContinue.waitForClickable({ timeout: 10000 });
         return this.btnContinue.click();
     }
     async clickBtnLoginHalo() {

@@ -1,5 +1,5 @@
-import { INVALID_NUMBER, VALID_NUMBER } from '../../data/login/anonymous';
-import Anonymous from '../../pageobjects/login/anonymous';
+import { INVALID_NUMBER, VALID_NUMBER } from '../../../data/login/anonymous';
+import Anonymous from '../../../pageobjects/login/anonymous';
 
 describe('TEST ANONYMOUS LOGIN FLOWS', async () => {
     it('should disable login button ', async () => {

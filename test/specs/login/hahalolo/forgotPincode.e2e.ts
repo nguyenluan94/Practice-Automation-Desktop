@@ -1,6 +1,6 @@
-import { INVALID_NUMBER, VALID_NUMBER } from '../../data/login/hahalolo';
-import Hahalolo from '../../pageobjects/forgotpincode/forgotpincode';
-import Page from '../../pageobjects/page';
+import { INVALID_NUMBER, VALID_NUMBER } from '../../../data/login/hahalolo';
+import Hahalolo from '../../../pageobjects/login/hahalolo/forgotPincode';
+import Page from '../../../pageobjects/page';
 
 let windows;
 describe('TEST FORGOT PIN CODE FLOWS', async () => {
