@@ -48,10 +48,10 @@ describe('TEST ANONYMOUS LOGIN FLOWS', async () => {
         await Anonymous.clickBtnBack();
         await expect(Anonymous.btnBack).toBeExisting();
     });
-    it('should title modal stop verify', async () => {
+    it('should title modal stop verify again', async () => {
         await expect(Anonymous.modalVerify).toBeExisting();
     });
-    it('should back page welcome', async () => {
+    it('should back page welcome after click button Ok', async () => {
         await Anonymous.clickModalOk();
     });
     it('should disable login button', async () => {
@@ -63,7 +63,7 @@ describe('TEST ANONYMOUS LOGIN FLOWS', async () => {
         await expect(Anonymous.btnStartLogin).not.toBeDisabled();
     });
 
-    it('should process to verification step', async () => {
+    it('should process to verification step again', async () => {
         await Anonymous.startLogin();
         await expect(Anonymous.titleLoginVerify).toBeExisting();
     });
@@ -76,7 +76,7 @@ describe('TEST ANONYMOUS LOGIN FLOWS', async () => {
         await Anonymous.enterVerification(INVALID_NUMBER.otp);
     });
 
-    it('should process to verification step', async () => {
+    it('should show verify error', async () => {
         await expect(Anonymous.loginVerifyError).toBeExisting();
     });
 
