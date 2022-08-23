@@ -1,5 +1,5 @@
 import { INVALID_NUMBER, VALID_NUMBER } from '../../../data/login/hahalolo';
-import Hahalolo from '../../../pageobjects/login/hahalolo/forgotPincode';
+import Hahalolo from '../../../pageobjects/login/hahalolo/forgot-pin-code';
 import Page from '../../../pageobjects/page';
 
 let windows;
@@ -26,20 +26,29 @@ describe('TEST FORGOT PIN CODE FLOWS', async () => {
         await Hahalolo.clickBtnCont();
         await expect(Hahalolo.tittleOtp).toBeExisting();
     });
-    it('should forgot pin code, cancel 3 times and show error', async () => {
+    it('should click forgot pin code', async () => {
         await Hahalolo.clickForgotOtp();
         await expect(Hahalolo.titleForgotOtp).toBeExisting();
-        await Hahalolo.clickBtnCancel();
-        await expect(Hahalolo.tittleOtp).toBeExisting();
-        await Hahalolo.clickForgotOtp();
-        await expect(Hahalolo.titleForgotOtp).toBeExisting();
-        await Hahalolo.clickBtnCancel();
-        await expect(Hahalolo.tittleOtp).toBeExisting();
-        await Hahalolo.clickForgotOtp();
-        await expect(Hahalolo.titleForgotOtp).toBeExisting();
-        await Hahalolo.clickBtnCancel();
-        await expect(Hahalolo.tittleOtp).toBeExisting();
-        await Hahalolo.clickForgotOtp();
-        await expect(Hahalolo.errorPincode).toBeExisting();
     });
+    // it('should input letter false', async () => {
+    //     await
+    // } {
+    //
+    // });
+    // // it('should forgot pin code, cancel 3 times and show error', async () => {
+    // //     await Hahalolo.clickForgotOtp();
+    // //     await expect(Hahalolo.titleForgotOtp).toBeExisting();
+    // //     await Hahalolo.clickBtnCancel();
+    // //     await expect(Hahalolo.tittleOtp).toBeExisting();
+    // //     await Hahalolo.clickForgotOtp();
+    // //     await expect(Hahalolo.titleForgotOtp).toBeExisting();
+    // //     await Hahalolo.clickBtnCancel();
+    // //     await expect(Hahalolo.tittleOtp).toBeExisting();
+    // //     await Hahalolo.clickForgotOtp();
+    // //     await expect(Hahalolo.titleForgotOtp).toBeExisting();
+    // //     await Hahalolo.clickBtnCancel();
+    // //     await expect(Hahalolo.tittleOtp).toBeExisting();
+    // //     await Hahalolo.clickForgotOtp();
+    // //     await expect(Hahalolo.errorPincode).toBeExisting();
+    // // });
 });
