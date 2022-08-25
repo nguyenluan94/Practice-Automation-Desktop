@@ -1,9 +1,6 @@
 import Page from '../../page';
 
 class Hahalolo extends Page {
-    get errorSetOtp() {
-        return $('#otp-form-set-error');
-    }
     get btnLoginHalo() {
         return $('button[id="platforms-halo"]');
     }
@@ -31,75 +28,56 @@ class Hahalolo extends Page {
     get tittleOtp() {
         return $('#otp-form-need-title');
     }
-    get otpHahalolo() {
-        return $('#otp-form-need-input-1');
-    }
-    get showLogoHalome() {
-        return $('#appbar-logo');
-    }
-    get changeAccount() {
-        return $('#halo-login-form-button-logout');
-    }
-    get errorOtp() {
-        return $('#otp-form-need-error');
-    }
-    get forgotOtp() {
-        return $('#otp-form-need-button-forgot');
-    }
     get titleForgotOtp() {
         return $('#otp-form-otp-title');
     }
     get btnConfirm() {
         return $('button[id="otp-form-otp-confirm"]');
     }
-    get inputForgotOtp() {
+    get btnForgotPin() {
+        return $('#otp-form-need-button-forgot');
+    }
+    get otpForgot() {
         return $('#otp-form-otp-input-1');
     }
-    get titleSetOtp() {
+    get errorForgotPin() {
+        return $('#otp-form-otp-error');
+    }
+    get titleResetPin() {
         return $('#otp-form-set-title');
     }
-    get otpinput() {
-        return $('#otp-input-1');
+    get btnBack() {
+        return $('.text-base');
     }
-    get otpConfirm() {
-        return $('#pin-confirm-pin-1');
-    }
-    get btnSave() {
-        return $('#halo-login-form-button-ok');
+    get errorRequest() {
+        return $('#otp-form-need-error');
     }
     get btnCancel() {
         return $('#otp-form-otp-cancel');
     }
-    get errorPincode() {
-        return $('#otp-form-need-error');
+    get logoHalome() {
+        return $('#appbar-logo');
+    }
+    get pinCode() {
+        return $('#otp-form-need-input-1');
+    }
+    async inputPinCode(otp: string) {
+        return this.pinCode.setValue(otp);
     }
     async clickBtnCancel() {
         return this.btnCancel.click();
     }
-    async inputSetOtp(setOtp: string) {
-        return this.otpinput.setValue(setOtp);
-    }
-    async inputConfirmOtp(setOtp: string) {
-        return this.otpConfirm.setValue(setOtp);
-    }
-    async clickBtnSave() {
-        return this.btnSave.click();
-    }
-    async inputFgOtp(otp: string) {
-        return this.inputForgotOtp.setValue(otp);
+    async clickBtnBack() {
+        return this.btnBack.click();
     }
     async clickBtnConfirm() {
         return this.btnConfirm.click();
     }
-
-    async clickForgotOtp() {
-        return this.forgotOtp.click();
+    async inputOtpForgot(pin: string) {
+        return this.otpForgot.setValue(pin);
     }
-    async buttonChange() {
-        return this.changeAccount.click();
-    }
-    async inputOtp(otp: string) {
-        return this.otpHahalolo.setValue(otp);
+    async clickForgotPin() {
+        return this.btnForgotPin.click();
     }
     async clickBtnCont() {
         return this.btnContinue.click();
@@ -113,7 +91,6 @@ class Hahalolo extends Page {
     async inputPassword(password: string) {
         return this.password.setValue(password);
     }
-
     async starLogin() {
         return this.btnLogin.click();
     }

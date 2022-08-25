@@ -35,7 +35,7 @@ describe('TEST ANONYMOUS FIRST TIME LOGIN FLOWS', async () => {
         await Anonymous.enterVerification(VALID_NUMBER.otp);
     });
     it('should input name success', async () => {
-        await Anonymous.enterInputName(VALID_NUMBER.name);
+        await Anonymous.enterInputName(VALID_ANONYMOUS_FIRST_TIME.name);
     });
     it('should login success after click button continue', async () => {
         await Anonymous.clickBtnContinue();
