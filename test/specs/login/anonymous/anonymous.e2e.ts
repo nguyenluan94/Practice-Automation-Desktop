@@ -82,6 +82,7 @@ describe('TEST ANONYMOUS LOGIN FLOWS', async () => {
 
     it('should input otp sms success', async () => {
         await Anonymous.enterVerification(VALID_NUMBER.otp);
+        await Anonymous.showLogoHalome.waitForDisplayed({timeout:10000});
         await expect(Anonymous.showLogoHalome).toBeExisting();
     });
 });

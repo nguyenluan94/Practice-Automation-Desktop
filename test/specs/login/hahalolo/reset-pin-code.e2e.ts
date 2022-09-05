@@ -61,6 +61,7 @@ describe('TEST RESET PIN CODE FLOWS', async () => {
         await Hahalolo.inputResetPin(VALID_NUMBER.otp);
         await Hahalolo.inputConfirmResetPin(VALID_NUMBER.otp);
         await Hahalolo.clickBtnSave();
+        await Hahalolo.titleOtp.waitForDisplayed({timeout:10000});
         await expect(Hahalolo.titleOtp).toBeExisting();
     });
     it('should login success', async () => {

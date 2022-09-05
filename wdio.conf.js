@@ -2,10 +2,10 @@ const binaryPath = process.env.BINARY || 'C:\\Users\\Nguyen Luan\\AppData\\Local
 exports.config = {
     specs: ['./test/specs/**/*.ts'],
     exclude: [],
-    maxInstances: 10,
+    maxInstances: 1,
     capabilities: [
         {
-            maxInstances: 5,
+            maxInstances: 1,
             browserName: 'chrome',
             'goog:chromeOptions': {
                 binary: binaryPath,

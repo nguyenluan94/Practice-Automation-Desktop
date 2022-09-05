@@ -59,6 +59,7 @@ describe('TEST HAHALOLO LOGIN FLOWS', async () => {
     });
     it('should login success', async () => {
         await Hahalolo.inputOtp(VALID_NUMBER.otp);
+        await Hahalolo.logoHalome.waitForDisplayed({ timeout: 10000 });
         await expect(Hahalolo.logoHalome).toBeExisting();
     });
 });
