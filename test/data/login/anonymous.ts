@@ -7,6 +7,7 @@ export const INVALID_NUMBER = {
     letter: 'abc',
     specialCharacter: '@$%',
     otp: '175206',
+    space: '   ',
 };
 export const VALID_ANONYMOUS_FIRST_TIME = {
     phone: Math.floor(Math.random() * 10000000000),
