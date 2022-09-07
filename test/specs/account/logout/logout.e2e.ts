@@ -1,10 +1,9 @@
 import LeftSideBar from '../../../element/left-side-bar/left-side-bar';
 import modal from '../../../element/modal/modal';
 import LoginByPhone from '../../../pageobjects/account/login/halome/login-by-phone';
-import Logout from '../../../pageobjects/account/logout/logout';
+import loginByPhone from '../../../pageobjects/account/login/halome/login-by-phone';
 import logout from '../../../pageobjects/account/logout/logout';
 import myprofile from '../../../pageobjects/account/myprofile/myprofile';
-import loginByPhone from "../../../pageobjects/account/login/halome/login-by-phone";
 
 describe('TEST ANONYMOUS LOGOUT FLOWS', async () => {
     before(async () => {

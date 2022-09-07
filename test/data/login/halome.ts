@@ -6,8 +6,9 @@ export const VALID_NUMBER = {
 export const INVALID_NUMBER = {
     letter: 'abc',
     specialCharacter: '@$%',
-    otp: '175206',
+    otp: '111111',
     space: '   ',
+    otpFalseLength: '12345',
 };
 export const VALID_ANONYMOUS_FIRST_TIME = {
     phone: Math.floor(Math.random() * 10000000000),

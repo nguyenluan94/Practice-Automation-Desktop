@@ -13,6 +13,9 @@ class LoginByPhone extends Page {
     get titleLoginVerify() {
         return $('#login-verify-title');
     }
+    get titleVerifyError() {
+        return $('#login-verify-error');
+    }
 
     get btnSendSmsOtp() {
         return $('#login-verify-send-sms-otp');
