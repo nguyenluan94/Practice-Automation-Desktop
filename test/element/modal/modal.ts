@@ -20,5 +20,11 @@ class modal {
     async clickBtnCancel() {
         return this.btnCancel.click();
     }
+    async showModal() {
+        return $('button[id="modal-button-ok"]');
+        return $('button[id="modal-button-cancel"]');
+        return $('#modal-body-content');
+        return $('#modal-icon-close');
+    }
 }
 export default new modal();
