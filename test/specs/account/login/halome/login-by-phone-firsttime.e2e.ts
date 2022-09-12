@@ -27,6 +27,9 @@ describe('TEST ANONYMOUS FIRST TIME LOGIN FLOWS', async () => {
     it('should login success after input valid otp', async () => {
         await loginByPhone.enterVerification(VALID_NUMBER.otp);
     });
+    it('should button Continue enable when input name empty', async () => {
+        await expect(loginByPhone.btnContinue).not.toBeDisabled();
+    });
     it('should input name success', async () => {
         await loginByPhone.enterInputName(VALID_NUMBER.name);
     });
